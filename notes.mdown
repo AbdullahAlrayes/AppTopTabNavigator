@@ -1,0 +1,65 @@
+### Top Tab Navigator Advance
+
+Download code by clicking [here](https://github.com/AbdullahAlrayes/AppTopTabNavigator)
+
+1.  install the following
+
+        yarn add react-navigation
+        yarn add react-navigation-material-bottom-tabs
+
+2.  Import the following
+
+        import { createMaterialTopTabNavigator } from "react-navigation";
+        import { SafeAreaView } from "react-native";
+
+3.  Create const `AppTabNavigation`
+
+        const AppTabNavigation = createMaterialTopTabNavigator(
+        {
+            Home: {
+            screen: HomeScreen,
+            navigationOptions: {
+                tabBarLabel: "Home",
+                tabBarIcon: ({ tintColor }) => (
+                <Icon name="ios-home" size={24} color={tintColor} />
+                )
+            }
+            },
+            Settings: {
+            screen: SettingScreen,
+            navigationOptions: {
+                tabBarLabel: "Settings",
+                tabBarIcon: ({ tintColor }) => (
+                <Icon name="ios-settings" size={24} color={tintColor} />
+                )
+            }
+            }
+        },
+        );
+
+4.  Following are the options you can add to customize the tab
+
+        {
+            initialRouteName: "Settings",
+            tabBarPosition: "bottom", //if you change it to bottom,it will go down
+            swipeEnabled: true, // you can set it to false to stop swipbale between screen
+            shifting: true,
+            tabBarOptions: {
+            activeTintColor: "orange",
+            inactiveTintColor: "grey",
+            style: {
+                backgroundColor: "#f2f2f2"
+                // if you set the position down, you should use the following
+                // borderTopWidth: 0.5,
+                // borderTopColor: "grey"
+            },
+            indicatorStyle: {
+                height: 1 // if you set it to 0, you will not have buttom underline and it should be 0 if the position is bottom,
+            },
+            showIcon: true
+            }
+        }
+
+5.  Following is the screen Shot
+
+![alt text](https://theteamwarehouse.nyc3.digitaloceanspaces.com/WareHouse/WareHouse/TopTabNavigatorAdvance.45.18%20AM.png)
